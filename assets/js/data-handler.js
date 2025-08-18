@@ -1,10 +1,18 @@
 // Fungsi untuk memuat data dari file JSON
 async function loadData(file) {
     try {
-        const response = await fetch(`/data/${file}.json`);
+        // Coba path relatif terlebih dahulu
+        let response = await fetch(`data/${file}.json`);
+        
+        // Jika gagal, coba path absolut
+        if (!response.ok) {
+            response = await fetch(`/data/${file}.json`);
+        }
+        
         if (!response.ok) {
             throw new Error(`Gagal memuat data: ${response.statusText}`);
         }
+        
         return await response.json();
     } catch (error) {
         console.error('Error:', error);
