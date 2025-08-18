@@ -3,43 +3,188 @@
 Author       : Tanvir Hossain
 Modified by  : Bilal
 Template Name: Creovate - Personal Portfolio
-Version      : 2.0                                          
+Version      : 2.1 (Enhanced Mobile)                                      
 * ----------------------------------------------------------------------------------------
 */
+
+/* Base Mobile Styles */
+:root {
+    --mobile-padding: 1rem;
+    --mobile-font-size: 16px;
+    --mobile-line-height: 1.6;
+}
 
 /* Improved touch targets for mobile */
 a, button, .btn, .nav-link, .form-control, .form-select, .dropdown-item {
     touch-action: manipulation;
+    min-height: 44px; /* Minimum touch target size */
+    min-width: 44px;
 }
 
-/* Prevent horizontal scroll */
+/* Prevent horizontal scroll and improve text rendering */
 html, body {
+    width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: var(--mobile-font-size);
+    line-height: var(--mobile-line-height);
 }
 
-/* Responsive images */
-img {
+/* Responsive images and media */
+img, video, iframe {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* Better mobile navigation */
+/* Enhanced mobile navigation */
 .navbar-toggler {
-    padding: 0.5rem 0.75rem;
-    font-size: 1.25rem;
+    padding: 0.75rem;
+    font-size: 1.5rem;
     line-height: 1;
     background-color: transparent;
     border: 1px solid transparent;
-    border-radius: 0.25rem;
+    border-radius: 4px;
+    z-index: 1001;
 }
 
 /* Improved mobile typography */
 body {
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    font-size: 1rem;
+    line-height: var(--mobile-line-height);
+}
+
+h1 { font-size: 2rem; line-height: 1.2; }
+h2 { font-size: 1.75rem; line-height: 1.25; }
+h3 { font-size: 1.5rem; line-height: 1.3; }
+h4 { font-size: 1.25rem; line-height: 1.35; }
+
+/* Better form controls for touch */
+input, textarea, select, button {
+    font-size: 1rem;
+    min-height: 44px;
+}
+
+/* Improved button styling for mobile */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+/* Better spacing for mobile */
+section {
+    padding: 3rem var(--mobile-padding);
+}
+
+/* Hero section adjustments */
+.hero-content {
+    padding: 2rem var(--mobile-padding);
+}
+
+/* Portfolio grid adjustments */
+.portfolio-grid {
+    margin: 0 -0.5rem;
+}
+
+.portfolio-item {
+    padding: 0.5rem;
+}
+
+/* Testimonial adjustments */
+.testimonial-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+/* Contact form adjustments */
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Footer adjustments */
+.footer-content {
+    text-align: center;
+    padding: 2rem var(--mobile-padding);
+}
+
+.social-links {
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Better mobile menu */
+.navbar-collapse {
+    background: #fff;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.navbar-collapse.show {
+    transform: translateX(0);
+}
+
+.navbar-nav {
+    padding-top: 4rem;
+}
+
+.nav-item {
+    margin: 0.5rem 0;
+}
+
+.nav-link {
+    padding: 0.75rem 1rem;
+    display: block;
+}
+
+/* Close button for mobile menu */
+.close-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Backdrop for mobile menu */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.menu-backdrop.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 
@@ -47,25 +192,46 @@ body {
 
 @media only screen and (min-width: 992px) and (max-width: 1280px) {
     .hero-content {
-        padding: 0;
+        padding: 0 2rem;
     }
 
     .hero-content h1 {
-        line-height: 60px;
-        margin: 20px 0px;
-        font-size: 50px;
-
+        line-height: 1.2;
+        margin: 1.5rem 0;
+        font-size: 3.5rem;
     }
 
     .main-hero-area {
-        padding-top: 140px;
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+    
+    .about-content, .service-item, .portfolio-item {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .testimonial-item {
+        padding: 2rem;
     }
 }
 
 
 /* Tablet Layout: 768px. */
 
-@media only screen and (min-width: 767px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    :root {
+        --mobile-padding: 2rem;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0 var(--mobile-padding);
+    }
 
     .single-project-page-right {
         margin-top: 50px;
@@ -226,8 +392,42 @@ body {
 /* Mobile Layout: 320px. */
 
 @media only screen and (max-width: 767px) {
+    :root {
+        --mobile-padding: 1rem;
+    }
+    
+    .container {
+        padding: 0 var(--mobile-padding);
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        margin: 1rem 0;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 3rem var(--mobile-padding);
+    }
+    
     .comment-form-area {
-        margin-left: 0px;
+        margin-left: 0;
         margin-bottom: 30px;
     }
 
@@ -532,12 +732,73 @@ body {
 }
 
 @media only screen and (max-width: 479px) {
+    :root {
+        --mobile-padding: 0.75rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.75rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .portfolio-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .testimonial-item {
+        padding: 1.25rem;
+    }
+    
+    .contact-form {
+        margin-top: 1.5rem;
+    }
+    
     .list-style-one.two-column li {
         width: 100%;
     }
 }
 
-
+@media only screen and (max-width: 374px) {
+    :root {
+        --mobile-padding: 0.5rem;
+        --mobile-font-size: 15px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 0.65rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .navbar-brand img {
+        max-height: 30px;
+    }
+    
+    .hero-content {
+        padding: 4rem 0 2rem;
+    }
+    
+    .comments {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
 
 @media only screen and (max-width: 767px) {
     .menu-social {
