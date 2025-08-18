@@ -1,0 +1,14 @@
+{
+  "name": "Bilal",
+  "title": "Web Developer",
+  "about": "Tech enthusiast with a passion for IT, web development, and data.",
+  "email": "email@example.com",
+  "phone": "+62 123 4567 8901",
+  "location": "Yogyakarta, Indonesia",
+  "social": {
+    "github": "https://github.com/username",
+    "linkedin": "https://linkedin.com/in/username",
+    "instagram": "https://instagram.com/username",
+    "twitter": "https://twitter.com/username"
+  }
+}

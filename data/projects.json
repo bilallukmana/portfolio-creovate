@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Financial Project Management System",
+    "description": "A web-based financial management system for project tracking using CodeIgniter. Features include budget tracking, expense management, and real-time reporting.",
+    "image": "assets/images/projects/project-1.jpg",
+    "tags": ["Web Development", "CodeIgniter", "PHP", "MySQL"],
+    "demo_url": "#",
+    "source_url": "#"
+  },
+  {
+    "id": 2,
+    "title": "E-commerce Website",
+    "description": "A full-featured e-commerce platform with product catalog, shopping cart, and payment integration.",
+    "image": "assets/images/projects/project-2.jpg",
+    "tags": ["Web Development", "Laravel", "Vue.js", "MySQL"],
+    "demo_url": "#",
+    "source_url": "#"
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Website",
+    "description": "A responsive portfolio website to showcase creative work and skills.",
+    "image": "assets/images/projects/project-3.jpg",
+    "tags": ["Web Design", "HTML", "CSS", "JavaScript"],
+    "demo_url": "#",
+    "source_url": "#"
+  }
+]

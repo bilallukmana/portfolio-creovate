@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "company": "CV. Global Mitra Perkasa",
+    "position": "Fullstack Developer Intern",
+    "period": "Feb 2023 - Aug 2023",
+    "description": "Developed and enhanced web applications using Laravel, HTML, and CSS. Collaborated with the team to optimize website performance and user experience.",
+    "responsibilities": [
+      "Mengembangkan fitur baru untuk aplikasi web",
+      "Memperbaiki bug dan masalah performa",
+      "Berkolaborasi dengan tim desain dan backend"
+    ]
+  },
+  {
+    "id": 2,
+    "company": "PT. Blanja Dapur Nusantara",
+    "position": "Digital Marketing",
+    "period": "Nov 2023 - Sep 2024",
+    "description": "Managed digital marketing campaigns to increase brand awareness and drive online sales.",
+    "responsibilities": [
+      "Mengelola kampanye iklan digital",
+      "Menganalisis performa kampanye",
+      "Meningkatkan engagement media sosial"
+    ]
+  }
+]
