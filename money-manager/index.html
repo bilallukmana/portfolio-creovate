@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="logo">💰</span>
+          <h1>Money Manager</h1>
+        </div>
+        <nav class="tabs" role="tablist" aria-label="Main Tabs">
+          <button class="tab active" data-tab="dashboard" aria-selected="true">Dashboard</button>
+          <button class="tab" data-tab="goals" aria-selected="false">My Goals</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="dashboard" class="tab-panel active" role="tabpanel" aria-labelledby="Dashboard">
+        <div class="summary">
+          <div class="card">
+            <div class="card-title">Total Income</div>
+            <div id="totalIncome" class="card-value">$0.00</div>
+          </div>
+          <div class="card">
+            <div class="card-title">Total Expenses</div>
+            <div id="totalExpenses" class="card-value">$0.00</div>
+          </div>
+          <div class="card profit">
+            <div class="card-title">Profit</div>
+            <div id="netProfit" class="card-value">$0.00</div>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div class="panel">
+            <h2>Add Transaction</h2>
+            <form id="transactionForm" class="form">
+              <div class="row">
+                <label>Type</label>
+                <div class="segmented">
+                  <label>
+                    <input type="radio" name="type" value="income" checked />
+                    <span>Income</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="type" value="expense" />
+                    <span>Expense</span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <label for="amount">Amount</label>
+                <input id="amount" name="amount" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.00" required />
+              </div>
+              <div class="row">
+                <label for="category">Category</label>
+                <input id="category" name="category" type="text" placeholder="e.g., Salary, Food, Rent" />
+              </div>
+              <div class="row">
+                <label for="description">Description</label>
+                <input id="description" name="description" type="text" placeholder="Optional details" />
+              </div>
+              <div class="row">
+                <label for="date">Date</label>
+                <input id="date" name="date" type="date" />
+              </div>
+              <div class="actions">
+                <button type="submit" class="btn primary">Add</button>
+                <button type="reset" class="btn">Reset</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel">
+            <h2>Transactions</h2>
+            <div class="table-responsive">
+              <table class="table" id="transactionsTable">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th class="num">Amount</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="transactionsBody">
+                  <!-- rows injected by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="goals" class="tab-panel" role="tabpanel" aria-labelledby="My Goals">
+        <div class="grid two">
+          <div class="panel">
+            <h2>Create Goal</h2>
+            <form id="goalForm" class="form">
+              <div class="row">
+                <label for="goalName">Goal Name</label>
+                <input id="goalName" name="goalName" type="text" placeholder="e.g., Emergency Fund" required />
+              </div>
+              <div class="row">
+                <label for="goalTarget">Target Amount</label>
+                <input id="goalTarget" name="goalTarget" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.00" required />
+              </div>
+              <div class="actions">
+                <button type="submit" class="btn primary">Create Goal</button>
+                <button type="reset" class="btn">Reset</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel">
+            <h2>My Goals</h2>
+            <div id="goalsList" class="goals-list">
+              <!-- goals injected by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="container">
+        <span>Built with ❤️ for tracking your money locally in your browser.</span>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
