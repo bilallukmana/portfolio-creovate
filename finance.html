@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal Finance Manager - Track income, expenses, and goals">
+    <meta name="keywords" content="finance, budget, income, expenses, goals, tracker">
+    <meta name="author" content="Bilal">
+    <!-- PAGE TITLE -->
+    <title>Finance Manager - Track Income, Expenses & Goals</title>
+    <!-- FAVICON ICON -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <!-- ALL GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- FONT AWESOME/REMIX ICONS -->
+    <link rel="stylesheet" href="assets/fonts/remixicon.css" />
+    <!-- MAGNIFIC CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- NICE SELECT CSS -->
+    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <!-- SLICK CSS -->
+    <link rel="stylesheet" href="assets/css/slick.min.css" />
+    <!-- SPACING CSS -->
+    <link rel="stylesheet" href="assets/css/spacing.css" />
+    <!-- MAIN STYLE CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- RESPONSIVE CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- START PRELOADER AREA-->
+    <div class="preloader">
+        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
+            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <div class="preloader-heading">
+            <div class="load-text">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </div>
+        </div>
+    </div>
+    <!-- END PRELOADER AREA -->
+    <!-- START MAGIC CURSOR AND BALL AREA-->
+    <div id="magic-cursor">
+        <div id="ball"></div>
+    </div>
+    <div id="magic-cursor">
+        <div id="ball"></div>
+    </div>
+    <!-- / END MAGIC CURSOR AND BALL AREA-->
+    <!-- START MENU DESIGN AREA -->
+    <header class="main-header">
+        <div class="header-upper">
+            <div class="container">
+                <div class="header-inner d-flex align-items-center">
+                    <!-- START LOGO DESIGN AREA -->
+                    <div class="logo-outer">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logos/logo.png" alt="Logo" title="Logo" /></a>
+                        </div>
+                    </div>
+                    <!-- / END LOGO DESIGN AREA -->
+                    <!-- START NAV DESIGN AREA -->
+                    <div class="nav-outer clearfix mx-auto">
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-lg">
+                            <div class="navbar-header">
+                                <div class="mobile-logo">
+                                    <a href="index.html">
+                                        <img src="assets/images/logos/logo.png" alt="Logo" title="Logo" />
+                                    </a>
+                                </div>
+                                <!-- Toggle Button -->
+                                <button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="navigation clearfix">
+                                    <li><a class="nav-link-click" href="index.html">Home</a></li>
+                                    <li><a class="nav-link-click" href="about.html">about</a></li>
+                                    <li><a class="nav-link-click" href="projects.html">Projects</a></li>
+                                    <li><a class="nav-link-click" href="blog.html">blog</a></li>
+                                    <li><a class="nav-link-click" href="finance.html">Finance</a></li>
+                                    <li><a class="nav-link-click" href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <!-- / END NAV DESIGN AREA -->
+                    </div>
+                    <div class="about-social text-center">
+                        <ul>
+                            <li><a href=""><i class="ri-instagram-fill"></i></a></li>
+                            <li><a href=""><i class="ri-twitter-x-line"></i></a></li>
+                            <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
+                            <li><a href=""><i class="ri-github-line"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- / END MENU DESIGN AREA -->
+    <!-- START MENU DESIGN AREA -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <main class="main-bg o-hidden">
+                <!-- START HEADER DESIGN AREA -->
+                <section class="single-page-hero-area">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <h2>Finance Manager</h2>
+                                <p>Track your income, expenses, totals, and set savings goals. Profit updates automatically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- / END HEADER DESIGN AREA -->
+
+                <section class="pt-40 pb-80">
+                    <div class="container">
+                        <!-- Summary Cards -->
+                        <div class="row g-4 pb-20">
+                            <div class="col-md-4">
+                                <div class="p-4 rounded-3 bg-light h-100">
+                                    <h5 class="mb-2">Total Income</h5>
+                                    <h2 id="totalIncome" class="m-0">$0.00</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4 rounded-3 bg-light h-100">
+                                    <h5 class="mb-2">Total Expenses</h5>
+                                    <h2 id="totalExpenses" class="m-0">$0.00</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4 rounded-3 bg-light h-100">
+                                    <h5 class="mb-2">Profit</h5>
+                                    <h2 id="totalProfit" class="m-0">$0.00</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tabs -->
+                        <ul class="nav nav-tabs" id="financeTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="transactions-tab" data-bs-toggle="tab" data-bs-target="#transactions" type="button" role="tab" aria-controls="transactions" aria-selected="true">Transactions</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="goals-tab" data-bs-toggle="tab" data-bs-target="#goals" type="button" role="tab" aria-controls="goals" aria-selected="false">Goals</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content pt-3" id="financeTabsContent">
+                            <!-- Transactions Tab -->
+                            <div class="tab-pane fade show active" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+                                <div class="row g-4">
+                                    <div class="col-lg-4">
+                                        <div class="p-4 rounded-3 bg-light h-100">
+                                            <h5 class="mb-3">Add Transaction</h5>
+                                            <form id="transactionForm">
+                                                <div class="mb-3 d-flex gap-3 align-items-center">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="type" id="typeIncome" value="income" checked>
+                                                        <label class="form-check-label" for="typeIncome">Income</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="type" id="typeExpense" value="expense">
+                                                        <label class="form-check-label" for="typeExpense">Expense</label>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="amount" class="form-label">Amount</label>
+                                                    <input type="number" step="0.01" min="0" class="form-control" id="amount" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="category" class="form-label">Category</label>
+                                                    <input type="text" class="form-control" id="category" placeholder="e.g. Salary, Rent" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="date" class="form-label">Date</label>
+                                                    <input type="date" class="form-control" id="date" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="note" class="form-label">Note (optional)</label>
+                                                    <input type="text" class="form-control" id="note" placeholder="Short description">
+                                                </div>
+                                                <button type="submit" class="theme-btn w-100">Add</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="p-4 rounded-3 bg-light h-100">
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <h5 class="m-0">Transactions</h5>
+                                                <button id="clearAllTransactions" class="btn btn-outline-danger btn-sm">Clear All</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table align-middle">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Type</th>
+                                                            <th>Category</th>
+                                                            <th class="text-end">Amount</th>
+                                                            <th>Note</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="transactionsBody">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Goals Tab -->
+                            <div class="tab-pane fade" id="goals" role="tabpanel" aria-labelledby="goals-tab">
+                                <div class="row g-4">
+                                    <div class="col-lg-4">
+                                        <div class="p-4 rounded-3 bg-light h-100">
+                                            <h5 class="mb-3">Create Goal</h5>
+                                            <form id="goalForm">
+                                                <div class="mb-3">
+                                                    <label for="goalName" class="form-label">Goal Name</label>
+                                                    <input type="text" class="form-control" id="goalName" placeholder="e.g. Emergency Fund" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="goalTarget" class="form-label">Target Amount</label>
+                                                    <input type="number" step="0.01" min="0" class="form-control" id="goalTarget" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="goalDeadline" class="form-label">Deadline (optional)</label>
+                                                    <input type="date" class="form-control" id="goalDeadline">
+                                                </div>
+                                                <button type="submit" class="theme-btn w-100">Add Goal</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="p-4 rounded-3 bg-light h-100">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <h5 class="m-0">Goals</h5>
+                                                <div class="text-muted">Available Profit: <strong id="availableProfit">$0.00</strong></div>
+                                            </div>
+                                            <div id="goalsList" class="vstack gap-3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- START FOOTER DESIGN AREA -->
+                <footer class="main-footer">
+                    <div class="footer-bottom pt-50 pb-40">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <div class="copyright-text">
+                                        <p>
+                                            &copy;Copyright <a href="index.html">Creovate</a> All
+                                            Rights Reserved.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <!-- / END FOOTER DESIGN AREA -->
+    <!-- START SCROOL UP DESIGN AREA -->
+    <div class="progress-wrap cursor-pointer">
+        <i class="ri-arrow-up-s-line"></i>
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- / END SCROOL UP DESIGN AREA -->
+    <!-- JQUERY JS -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- BOOTSTRAP JS-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- APPEAR JS -->
+    <script src="assets/js/appear.min.js"></script>
+    <!-- MAGNIFICANT JS -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- SLICK JS-->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- GSAP AND LOCOMOTIV JS-->
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/smoother-script.js"></script>
+    <!-- NICE SELECT JS-->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- IMAGE LOADER JS-->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- ISOTOPE JS-->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--  WOW ANIMATION JS-->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- DATA HANDLER JS -->
+    <script src="assets/js/data-handler.js"></script>
+    <!-- SCRIPT JS-->
+    <script src="assets/js/script.js"></script>
+    <!-- FINANCE JS -->
+    <script src="assets/js/finance.js"></script>
+</body>
+
+</html>
+
