@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Money Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container header-content">
+        <h1>Money Manager</h1>
+        <nav class="tabs" aria-label="Primary">
+          <button class="tab-button active" data-tab="dashboard" aria-controls="tab-dashboard" aria-selected="true">Dashboard</button>
+          <button class="tab-button" data-tab="transactions" aria-controls="tab-transactions" aria-selected="false">Transactions</button>
+          <button class="tab-button" data-tab="goals" aria-controls="tab-goals" aria-selected="false">Goals</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Dashboard -->
+      <section id="tab-dashboard" class="tab-panel" role="tabpanel" aria-labelledby="Dashboard">
+        <div class="cards">
+          <div class="card income">
+            <h3>Total Income</h3>
+            <div id="total-income" class="metric">$0.00</div>
+          </div>
+          <div class="card expenses">
+            <h3>Total Expenses</h3>
+            <div id="total-expenses" class="metric">$0.00</div>
+          </div>
+          <div class="card profit">
+            <h3>Profit</h3>
+            <div id="total-profit" class="metric">$0.00</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transactions -->
+      <section id="tab-transactions" class="tab-panel hidden" role="tabpanel">
+        <div class="panel-header">
+          <h2>Transactions</h2>
+          <div class="actions">
+            <button id="clear-all-transactions" class="danger" title="Delete all transactions">Clear All</button>
+          </div>
+        </div>
+
+        <form id="transaction-form" class="form-grid" autocomplete="off">
+          <label>
+            Type
+            <select id="tx-type" required>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </label>
+          <label>
+            Amount
+            <input id="tx-amount" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.00" required />
+          </label>
+          <label>
+            Category
+            <input id="tx-category" type="text" placeholder="Salary, Rent, Food…" />
+          </label>
+          <label>
+            Date
+            <input id="tx-date" type="date" />
+          </label>
+          <label class="span-2">
+            Note
+            <input id="tx-note" type="text" placeholder="Optional note" />
+          </label>
+          <div class="form-actions span-2">
+            <button type="submit">Add Transaction</button>
+          </div>
+        </form>
+
+        <div class="table-wrap">
+          <table class="data-table" id="transactions-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Note</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="transactions-tbody">
+              <!-- Rows populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Goals -->
+      <section id="tab-goals" class="tab-panel hidden" role="tabpanel">
+        <div class="panel-header">
+          <h2>Goals</h2>
+        </div>
+
+        <div class="profit-banner">
+          Current Profit: <strong id="goals-profit">$0.00</strong>
+        </div>
+
+        <form id="goal-form" class="form-grid" autocomplete="off">
+          <label>
+            Goal Name
+            <input id="goal-name" type="text" placeholder="Emergency Fund" required />
+          </label>
+          <label>
+            Target Amount
+            <input id="goal-target" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.00" required />
+          </label>
+          <label>
+            Due Date
+            <input id="goal-due" type="date" />
+          </label>
+          <div class="form-actions">
+            <button type="submit">Create Goal</button>
+          </div>
+        </form>
+
+        <div id="goals-list" class="goals-list">
+          <!-- Goals populated by JS -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="container">
+        <small>Data is stored locally in your browser.</small>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
