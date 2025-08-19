@@ -1,3 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Money Manager</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <header class="app-header">
+        <h1>Money Manager</h1>
+        <nav class="tabs" role="tablist" aria-label="Main">
+            <button class="tab-button active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+            <button class="tab-button" data-tab="income" role="tab" aria-selected="false">Income</button>
+            <button class="tab-button" data-tab="expenses" role="tab" aria-selected="false">Expenses</button>
+            <button class="tab-button" data-tab="goals" role="tab" aria-selected="false">Goals</button>
+        </nav>
+    </header>
+
+    <main class="app-main">
+        <!-- Overview -->
+        <section id="tab-overview" class="tab-panel active" role="tabpanel" aria-labelledby="overview">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-title">Total Income</div>
+                    <div id="totalIncome" class="card-value">$0.00</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Total Expenses</div>
+                    <div id="totalExpenses" class="card-value">$0.00</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Profit</div>
+                    <div id="totalProfit" class="card-value">$0.00</div>
+                </div>
+            </div>
+
+            <div class="grid two-col">
+                <div class="panel">
+                    <h2>Quick Add Income</h2>
+                    <form id="formQuickIncome" class="entry-form">
+                        <div class="field">
+                            <label>Amount</label>
+                            <input type="number" step="0.01" min="0" name="amount" required placeholder="0.00">
+                        </div>
+                        <div class="field">
+                            <label>Date</label>
+                            <input type="date" name="date" required>
+                        </div>
+                        <div class="field">
+                            <label>Category</label>
+                            <input type="text" name="category" placeholder="e.g., Salary" required>
+                        </div>
+                        <div class="field">
+                            <label>Description</label>
+                            <input type="text" name="description" placeholder="Optional">
+                        </div>
+                        <button type="submit" class="btn primary">Add Income</button>
+                    </form>
+                </div>
+                <div class="panel">
+                    <h2>Quick Add Expense</h2>
+                    <form id="formQuickExpense" class="entry-form">
+                        <div class="field">
+                            <label>Amount</label>
+                            <input type="number" step="0.01" min="0" name="amount" required placeholder="0.00">
+                        </div>
+                        <div class="field">
+                            <label>Date</label>
+                            <input type="date" name="date" required>
+                        </div>
+                        <div class="field">
+                            <label>Category</label>
+                            <input type="text" name="category" placeholder="e.g., Food" required>
+                        </div>
+                        <div class="field">
+                            <label>Description</label>
+                            <input type="text" name="description" placeholder="Optional">
+                        </div>
+                        <button type="submit" class="btn danger">Add Expense</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Income -->
+        <section id="tab-income" class="tab-panel" role="tabpanel" aria-labelledby="income">
+            <div class="panel">
+                <h2>Add Income</h2>
+                <form id="formIncome" class="entry-form">
+                    <div class="field">
+                        <label>Amount</label>
+                        <input type="number" step="0.01" min="0" name="amount" required placeholder="0.00">
+                    </div>
+                    <div class="field">
+                        <label>Date</label>
+                        <input type="date" name="date" required>
+                    </div>
+                    <div class="field">
+                        <label>Category</label>
+                        <input type="text" name="category" placeholder="e.g., Salary" required>
+                    </div>
+                    <div class="field">
+                        <label>Description</label>
+                        <input type="text" name="description" placeholder="Optional">
+                    </div>
+                    <button type="submit" class="btn primary">Add Income</button>
+                </form>
+            </div>
+            <div class="panel">
+                <h2>Income History</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th class="num">Amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="incomeTbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expenses -->
+        <section id="tab-expenses" class="tab-panel" role="tabpanel" aria-labelledby="expenses">
+            <div class="panel">
+                <h2>Add Expense</h2>
+                <form id="formExpense" class="entry-form">
+                    <div class="field">
+                        <label>Amount</label>
+                        <input type="number" step="0.01" min="0" name="amount" required placeholder="0.00">
+                    </div>
+                    <div class="field">
+                        <label>Date</label>
+                        <input type="date" name="date" required>
+                    </div>
+                    <div class="field">
+                        <label>Category</label>
+                        <input type="text" name="category" placeholder="e.g., Food" required>
+                    </div>
+                    <div class="field">
+                        <label>Description</label>
+                        <input type="text" name="description" placeholder="Optional">
+                    </div>
+                    <button type="submit" class="btn danger">Add Expense</button>
+                </form>
+            </div>
+            <div class="panel">
+                <h2>Expense History</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th class="num">Amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="expenseTbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals -->
+        <section id="tab-goals" class="tab-panel" role="tabpanel" aria-labelledby="goals">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-title">Current Profit</div>
+                    <div id="goalsProfit" class="card-value">$0.00</div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Create Goal</h2>
+                <form id="formGoal" class="entry-form">
+                    <div class="field">
+                        <label>Goal Name</label>
+                        <input type="text" name="name" placeholder="e.g., Emergency Fund" required>
+                    </div>
+                    <div class="field">
+                        <label>Target Amount</label>
+                        <input type="number" step="0.01" min="0" name="target" required placeholder="0.00">
+                    </div>
+                    <button type="submit" class="btn primary">Create Goal</button>
+                </form>
+            </div>
+
+            <div class="panel">
+                <h2>My Goals</h2>
+                <div id="goalsEmpty" class="empty">No goals yet. Create one above.</div>
+                <div id="goalsList" class="goals"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="grow"></div>
+        <div class="actions">
+            <button id="btnExport" class="btn">Export Data</button>
+            <label for="importFile" class="btn">Import Data</label>
+            <input id="importFile" type="file" accept="application/json" hidden>
+            <button id="btnReset" class="btn warning">Reset All</button>
+        </div>
+    </footer>
+
+    <script src="./app.js" type="module"></script>
+    <script>
+        // Set default dates to today on load
+        (function setDefaultDates(){
+            const today = new Date().toISOString().slice(0,10);
+            document.querySelectorAll('input[type="date"]').forEach(i => i.value = today);
+        })();
+    </script>
+</body>
+<style>
+    /* Critical above-the-fold styles to avoid flash before CSS loads */
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin:0; background:#0b1020; color:#e6e9ef; }
+    .app-header{ position:sticky; top:0; z-index:10; background:#0f1630; border-bottom:1px solid #202744; padding:16px; }
+    .app-header h1{ margin:0 0 8px 0; font-size:20px; }
+    .tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+    .tab-button{ background:#141a36; color:#cbd2e9; border:1px solid #202744; padding:8px 12px; border-radius:8px; cursor:pointer; }
+    .tab-button.active{ background:#2643d3; color:#fff; border-color:#2643d3; }
+    .app-main{ padding:16px; max-width:1100px; margin:0 auto; }
+    .tab-panel{ display:none; }
+    .tab-panel.active{ display:block; }
+    .cards{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:16px; }
+    .card{ background:#0f1630; border:1px solid #202744; border-radius:12px; padding:16px; }
+    .card-title{ font-size:12px; color:#9fb0d9; text-transform:uppercase; letter-spacing:0.08em; }
+    .card-value{ font-size:28px; margin-top:8px; }
+    .grid.two-col{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
+    .panel{ background:#0f1630; border:1px solid #202744; border-radius:12px; padding:16px; margin-bottom:16px; }
+    .entry-form{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; align-items:end; }
+    .entry-form .field{ display:flex; flex-direction:column; gap:6px; }
+    label{ color:#9fb0d9; font-size:12px; }
+    input{ background:#0b1020; color:#e6e9ef; border:1px solid #202744; border-radius:8px; padding:10px; }
+    input::placeholder{ color:#5c6a93; }
+    .btn{ background:#141a36; color:#cbd2e9; border:1px solid #202744; padding:10px 14px; border-radius:8px; cursor:pointer; }
+    .btn.primary{ background:#2643d3; border-color:#2643d3; color:white; }
+    .btn.danger{ background:#c4324c; border-color:#c4324c; color:white; }
+    .btn.warning{ background:#b88709; border-color:#b88709; color:white; }
+    .btn.small{ padding:6px 10px; font-size:12px; }
+    .table-wrap{ overflow:auto; border-radius:10px; border:1px solid #202744; }
+    table{ width:100%; border-collapse:collapse; }
+    thead{ background:#141a36; color:#cbd2e9; }
+    th, td{ padding:10px 12px; border-bottom:1px solid #202744; }
+    td.num, th.num{ text-align:right; }
+    .row-actions{ display:flex; gap:8px; justify-content:flex-end; }
+    .empty{ color:#8698c8; font-style:italic; }
+    .goals{ display:grid; gap:12px; }
+    .goal{ border:1px solid #202744; border-radius:12px; padding:12px; background:#0b1020; }
+    .goal-top{ display:flex; align-items:center; gap:12px; justify-content:space-between; }
+    .goal-name{ font-weight:600; }
+    .goal-amt{ color:#9fb0d9; }
+    .progress{ height:10px; background:#141a36; border:1px solid #202744; border-radius:999px; overflow:hidden; margin-top:8px; }
+    .progress > div{ height:100%; background:#2fc36c; width:0%; transition:width .3s ease; }
+    .app-footer{ position:sticky; bottom:0; background:#0f1630; border-top:1px solid #202744; padding:12px 16px; display:flex; gap:12px; align-items:center; }
+    .app-footer .grow{ flex:1; }
+    @media (max-width: 720px){ .entry-form{ grid-template-columns: 1fr; } }
+</style>
+</html>
 <!DOCTYPE html>
 <base href="/" />
 <html lang="en">
